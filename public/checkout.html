@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — CosmicMuse</title>
+<meta name="theme-color" content="#0B0908">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header data-nav></header>
+
+<main id="main">
+  <section class="phead">
+    <div class="wrap">
+      <p class="crumbs"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/cart">Bag</a> &nbsp;/&nbsp; Checkout</p>
+      <h1 class="display d-lg">Checkout</h1>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:1rem">
+    <div class="wrap">
+      <form class="co" data-form novalidate>
+        <div>
+          <div data-alert></div>
+
+          <section>
+            <h2>Contact</h2>
+            <div class="form-grid">
+              <div class="field field--full">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+                <span class="msg"></span>
+              </div>
+              <div class="field">
+                <label for="first_name">First name</label>
+                <input id="first_name" name="first_name" autocomplete="given-name">
+                <span class="msg"></span>
+              </div>
+              <div class="field">
+                <label for="last_name">Last name</label>
+                <input id="last_name" name="last_name" autocomplete="family-name">
+                <span class="msg"></span>
+              </div>
+              <div class="field field--full">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="98765 43210">
+                <span class="msg"></span>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Delivery address</h2>
+            <div class="form-grid">
+              <div class="field field--full">
+                <label for="address1">Address</label>
+                <input id="address1" name="address1" autocomplete="address-line1">
+                <span class="msg"></span>
+              </div>
+              <div class="field field--full">
+                <label for="address2">Apartment, suite (optional)</label>
+                <input id="address2" name="address2" autocomplete="address-line2">
+                <span class="msg"></span>
+              </div>
+              <div class="field">
+                <label for="city">City</label>
+                <input id="city" name="city" autocomplete="address-level2">
+                <span class="msg"></span>
+              </div>
+              <div class="field">
+                <label for="state">State</label>
+                <input id="state" name="state" autocomplete="address-level1">
+                <span class="msg"></span>
+              </div>
+              <div class="field">
+                <label for="postcode">PIN code</label>
+                <input id="postcode" name="postcode" inputmode="numeric" maxlength="6" autocomplete="postal-code">
+                <span class="msg"></span>
+              </div>
+              <div class="field">
+                <label for="country">Country</label>
+                <input id="country" name="country" value="India" autocomplete="country-name">
+                <span class="msg"></span>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Gift</h2>
+            <label class="check">
+              <input type="checkbox" name="gift_wrap" data-gift>
+              <span>Wrap this order<small>Hand-tied in unbleached linen with a handwritten card — ₹350</small></span>
+            </label>
+            <div class="field field--full" style="margin-top:1rem" data-giftnote hidden>
+              <label for="gift_note">Message on the card</label>
+              <textarea id="gift_note" name="gift_note" maxlength="400" placeholder="Up to 400 characters"></textarea>
+              <span class="msg"></span>
+            </div>
+          </section>
+
+          <section>
+            <h2>Payment</h2>
+            <div class="testcards">
+              <b>Simulated payment</b> — no gateway is contacted and no card details are stored.
+              Use these to exercise each outcome:
+              <ul>
+                <li><code>4242 4240 0006 1111</code> — approved</li>
+                <li><code>4242 4240 0002 0000</code> — declined by issuer</li>
+                <li><code>4242 4240 0000 0341</code> — insufficient funds</li>
+              </ul>
+            </div>
+            <div class="form-grid">
+              <div class="field field--full">
+                <label for="card_name">Name on card</label>
+                <input id="card_name" name="card_name" autocomplete="cc-name">
+                <span class="msg"></span>
+              </div>
+              <div class="field field--full">
+                <label for="card_number">Card number</label>
+                <input id="card_number" name="card_number" inputmode="numeric" placeholder="4242 4240 0006 1111"
+                       autocomplete="cc-number" maxlength="23" data-cc>
+                <span class="msg"></span>
+              </div>
+              <div class="field">
+                <label for="card_expiry">Expiry</label>
+                <input id="card_expiry" name="card_expiry" placeholder="MM/YY" maxlength="5"
+                       autocomplete="cc-exp" data-exp>
+                <span class="msg"></span>
+              </div>
+              <div class="field">
+                <label for="card_cvc">Security code</label>
+                <input id="card_cvc" name="card_cvc" inputmode="numeric" maxlength="4" autocomplete="cc-csc">
+                <span class="msg"></span>
+              </div>
+            </div>
+            <button class="btn btn--solid btn--block" type="submit" style="margin-top:1.6rem" data-pay>
+              <span>Pay &amp; Place Order</span>
+            </button>
+            <div data-paystate></div>
+            <p class="muted" style="font-size:.74rem;margin-top:1rem">
+              By placing this order you agree to our terms. This is a demonstration store —
+              no payment is processed and nothing will be shipped.
+            </p>
+          </section>
+        </div>
+
+        <aside class="co__summary">
+          <h2>Your order</h2>
+          <div data-summary></div>
+        </aside>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer data-footer></footer>
+<script src="/js/app.js"></script>
+<script src="/js/checkout.js"></script>
+</body>
+</html>

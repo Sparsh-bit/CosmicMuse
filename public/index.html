@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CosmicMuse — Scents Beyond Time</title>
+<meta name="description" content="Rare ingredients. Timeless craftsmanship. Fragrances that stay with you — long after the moment passes.">
+<meta name="theme-color" content="#0B0908">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/site.css">
+<link rel="preload" as="image" href="/assets/img/hero.jpg">
+<link rel="preload" as="image" href="/assets/frames/f_001.webp" type="image/webp">
+<style>
+  /* scroll runways for the two pinned sections */
+  .scrub { height: 560vh; }
+  .rail-sec { height: calc(100vh + var(--runway, 1200px)); }
+  .rail-sec__sticky { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header data-nav></header>
+
+<main id="main">
+
+  <!-- ══════════════ 01 · LANDING / HERO ══════════════ -->
+  <section class="hero">
+    <div class="hero__media">
+      <img src="/assets/img/hero.jpg" alt="Citrus peel and essence suspended mid-air in warm amber light"
+           width="2000" height="1125" fetchpriority="high" data-par="0.06">
+    </div>
+    <div class="hero__in wrap">
+      <p class="eyebrow" data-rv data-rv-delay="120">Scents Beyond Time</p>
+      <h1 class="display d-xl" data-split data-rv data-rv-delay="200">A Memory<br>In Every Drop</h1>
+      <p class="lede" data-rv data-rv-delay="420">
+        Rare ingredients. Timeless craftsmanship. Fragrances that stay with you —
+        long after the moment passes.
+      </p>
+      <div class="hero__cta" data-rv data-rv-delay="560">
+        <a class="btn btn--solid" href="/shop"><span>Explore Collection</span><i class="arw">→</i></a>
+        <a class="btn" href="#deconstruct"><span>The Scent</span></a>
+      </div>
+    </div>
+    <div class="hero__scroll"><span>Scroll</span><i></i></div>
+    <div class="hero__index">01<hr><small>04</small></div>
+  </section>
+
+  <!-- ══════════════ 02 · SCROLL ANIMATION (DECONSTRUCTION) ══════════════ -->
+  <section class="scrub" id="deconstruct" data-scrub>
+    <div class="scrub__sticky">
+      <div class="scrub__canvas"><canvas aria-hidden="true"></canvas></div>
+
+      <div class="scrub__copy">
+        <p class="eyebrow">The Scent</p>
+        <h2 class="display d-lg" data-split>Everything<br>Begins With<br>A Drop.</h2>
+        <p class="lede">A deeper look into the ingredients, crafted by nature, guided by time.</p>
+      </div>
+
+      <div class="scrub__notes">
+        <div class="scrub__note on" data-note><b>Cap</b><span>The Seal</span></div>
+        <div class="scrub__note" data-note><b>Glass</b><span>The Vessel</span></div>
+        <div class="scrub__note" data-note><b>Liquid</b><span>The Essence</span></div>
+        <div class="scrub__note" data-note><b>Particles</b><span>The Aura</span></div>
+        <div class="scrub__note" data-note><b>Ingredients</b><span>The Origin</span></div>
+      </div>
+
+      <div class="scrub__progress" data-scrub-bar><i></i></div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 03 · INGREDIENT UNIVERSE ══════════════ -->
+  <section class="ing rail-sec" data-rail>
+    <div class="rail-sec__sticky">
+      <div class="wrap">
+        <div class="ing__head">
+          <div>
+            <p class="eyebrow" data-rv>The Palette</p>
+            <h2 class="display d-lg" data-split data-rv>The World<br>Inside the Bottle.</h2>
+          </div>
+          <a class="link-u" href="/shop" data-rv>Explore Ingredients <span>→</span></a>
+        </div>
+      </div>
+
+      <div style="overflow:hidden;padding-left:var(--gutter)">
+        <div class="ing__rail" data-rail-track>
+          <article class="ing__card">
+            <img src="/assets/img/ing-bergamot.jpg" alt="Bergamot" loading="lazy" width="760" height="1140">
+            <div class="ing__cap"><h3>Bergamot</h3><p>Citrus &amp; Fresh</p>
+              <em>Cold-pressed in Calabria, from fruit picked before it fully ripens.</em></div>
+          </article>
+          <article class="ing__card">
+            <img src="/assets/img/ing-saffron.jpg" alt="Saffron" loading="lazy" width="760" height="1140">
+            <div class="ing__cap"><h3>Saffron</h3><p>Warm &amp; Spicy</p>
+              <em>Seventy thousand flowers for a single pound of threads.</em></div>
+          </article>
+          <article class="ing__card">
+            <img src="/assets/img/ing-cardamom.jpg" alt="Cardamom" loading="lazy" width="760" height="1140">
+            <div class="ing__cap"><h3>Cardamom</h3><p>Exotic &amp; Vibrant</p>
+              <em>Green pods from the Western Ghats, ground the morning they are used.</em></div>
+          </article>
+          <article class="ing__card">
+            <img src="/assets/img/ing-rose.jpg" alt="Rose" loading="lazy" width="760" height="1140">
+            <div class="ing__cap"><h3>Rose</h3><p>Floral &amp; Timeless</p>
+              <em>Damascena, harvested before dawn while the oil is still rising.</em></div>
+          </article>
+          <article class="ing__card">
+            <img src="/assets/img/ing-oud.jpg" alt="Oud" loading="lazy" width="760" height="1140">
+            <div class="ing__cap"><h3>Oud</h3><p>Deep &amp; Mysterious</p>
+              <em>Resinous heartwood, decades in the making. Used a drop at a time.</em></div>
+          </article>
+          <article class="ing__card">
+            <img src="/assets/img/ing-sandalwood.jpg" alt="Sandalwood" loading="lazy" width="760" height="1140">
+            <div class="ing__cap"><h3>Sandalwood</h3><p>Smooth &amp; Creamy</p>
+              <em>Slow-distilled from trees older than the house itself.</em></div>
+          </article>
+          <article class="ing__card">
+            <img src="/assets/img/smoke.jpg" alt="Incense" loading="lazy" width="1600" height="900">
+            <div class="ing__cap"><h3>Incense</h3><p>Smoke &amp; Resin</p>
+              <em>Somalian frankincense, burned to read the resin before we buy.</em></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="wrap"><div class="ing__bar" data-rail-bar><i></i></div></div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════ 3b · THE NOTES PYRAMID ══════════════ -->
+  <section class="pyr section">
+    <div class="pyr__bg"><img src="/assets/img/texture-band.jpg" alt="" loading="lazy" width="2000" height="700"></div>
+    <div class="pyr__in wrap">
+      <div class="pyr__head">
+        <p class="eyebrow no-rule" style="justify-content:center" data-rv>Structure</p>
+        <h2 class="display d-lg" data-split data-rv>A Fragrance<br>Unfolds In Three.</h2>
+        <p class="lede" data-rv data-rv-delay="200">
+          What you smell in the first minute is not what you are wearing an hour later.
+          Every composition in the house is built in three movements.
+        </p>
+      </div>
+
+      <div class="pyr__grid">
+        <article class="pyr__card" data-rv>
+          <b>01</b>
+          <h3>Top</h3>
+          <span class="when">First 15 minutes</span>
+          <p>The opening. Volatile, bright, and gone quickly — its job is to announce the
+             fragrance, then step out of the way.</p>
+          <div class="pyr__notes"><span>Bergamot</span><span>Blood Orange</span><span>Saffron</span><span>Pink Pepper</span></div>
+        </article>
+
+        <article class="pyr__card" data-rv data-rv-delay="140">
+          <b>02</b>
+          <h3>Heart</h3>
+          <span class="when">One to four hours</span>
+          <p>The body of the thing. This is what the fragrance actually is — the accord
+             everything else was built around.</p>
+          <div class="pyr__notes"><span>Rose</span><span>Cardamom</span><span>Orris</span><span>Amber</span><span>Oud</span></div>
+        </article>
+
+        <article class="pyr__card" data-rv data-rv-delay="280">
+          <b>03</b>
+          <h3>Base</h3>
+          <span class="when">Four hours onward</span>
+          <p>What stays on skin and on cloth. Heavy, slow-evaporating materials that hold
+             the whole structure up from underneath.</p>
+          <div class="pyr__notes"><span>Sandalwood</span><span>Labdanum</span><span>Vanilla</span><span>Tonka</span><span>Musk</span></div>
+        </article>
+      </div>
+
+      <div class="pyr__meter" data-rv>
+        <span>Applied</span><i></i><span>Twelve hours later</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 04 · THE RITUAL ══════════════ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <div class="split__media" data-rv="left">
+          <img src="/assets/img/ritual.jpg" alt="A pipette releasing essence into a row of amber vials"
+               loading="lazy" width="1600" height="1100">
+        </div>
+        <div class="split__body" data-rv="right">
+          <p class="eyebrow">The Ritual</p>
+          <h2 class="display d-lg" data-split>Made Slowly.<br>Worn Differently.</h2>
+          <p class="lede">A journey of patience, precision and purpose. Five stages, none of
+            which can be hurried without the whole thing telling on you later.</p>
+          <ol class="steps">
+            <li><b>01</b><div><span>Source</span><em>Materials bought at origin, by people who know the grower.</em></div></li>
+            <li><b>02</b><div><span>Distil</span><em>Low and slow — heat is the enemy of a delicate top note.</em></div></li>
+            <li><b>03</b><div><span>Blend</span><em>By hand, in ten-litre batches, against a written formula.</em></div></li>
+            <li><b>04</b><div><span>Rest</span><em>Six weeks in the dark before anything is bottled.</em></div></li>
+            <li><b>05</b><div><span>Bottle</span><em>Filled, sealed and numbered in the room it was made.</em></div></li>
+          </ol>
+          <a class="btn" href="/the-ritual" style="margin-top:2.4rem"><span>Discover the Ritual</span><i class="arw">→</i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 05 · CINEMATIC FILM ══════════════ -->
+  <section class="film">
+    <div class="film__bg">
+      <img src="/assets/img/film-still.jpg" alt="" loading="lazy" width="2000" height="1125" data-par="0.08">
+    </div>
+    <div class="film__in">
+      <p class="eyebrow no-rule" style="justify-content:center">Feel It First</p>
+      <h2 class="display d-lg" data-split data-rv>Feel It Before<br>You See It.</h2>
+      <button class="play" data-play aria-label="Play the film">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>
+      </button>
+      <span class="play__label">Play Film</span>
+    </div>
+    <div class="film__meta">A sensory journey<br>through places,<br>ingredients and memories.</div>
+  </section>
+
+  <!-- ══════════════ 06 · COLLECTION ══════════════ -->
+  <section class="section" id="collection">
+    <div class="wrap">
+      <div class="grid-head">
+        <div>
+          <p class="eyebrow" data-rv>The Collection</p>
+          <h2 class="display d-lg" data-split data-rv>Icons of<br>CosmicMuse.</h2>
+        </div>
+        <a class="link-u" href="/shop" data-rv>View All Scents <span>→</span></a>
+      </div>
+      <div class="pgrid" data-collection>
+        <p class="muted">Loading the collection…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 08 · THE HOUSE ══════════════ -->
+  <section class="section" style="background:var(--bg-2)">
+    <div class="wrap">
+      <div class="split split--flip">
+        <div class="split__media" data-rv="right">
+          <img src="/assets/img/house.jpg" alt="A gloved hand holding a filled flacon in the blending room"
+               loading="lazy" width="1500" height="1125">
+        </div>
+        <div class="split__body" data-rv="left">
+          <p class="eyebrow">The House</p>
+          <h2 class="display d-lg" data-split>We Don't Make<br>Perfume.<br>We Make Memories.</h2>
+          <p class="lede">A modern house, built on ancient traditions. We source rare ingredients
+            from around the world and craft fragrances meant to last — in the bottle, and afterwards.</p>
+          <a class="btn" href="/the-house" style="margin-top:2.2rem"><span>Our Story</span><i class="arw">→</i></a>
+          <div style="display:flex;gap:2.6rem;flex-wrap:wrap;margin-top:3rem;
+                      font-size:.63rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted-2)">
+            <span>Source</span><span>Craft</span><span>Time</span><span>Memory</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 09 · TESTIMONIAL ══════════════ -->
+  <section class="quote section">
+    <div class="quote__bg"><img src="/assets/img/testimonial.jpg" alt="" loading="lazy" width="1600" height="1040" data-par="0.05"></div>
+    <div class="quote__in wrap" data-rv>
+      <blockquote>“Some fragrances fade.<br>This one stays.”</blockquote>
+      <cite>Priya S.<small>Verified Buyer · No. 01</small></cite>
+    </div>
+  </section>
+
+  <!-- ══════════════ 10 · FINAL CTA ══════════════ -->
+  <section class="cta section">
+    <div class="cta__bg"><img src="/assets/img/cta.jpg" alt="" loading="lazy" width="2000" height="1000"></div>
+    <div class="cta__in wrap" data-rv>
+      <h2 class="display d-lg" data-split style="text-transform:uppercase;letter-spacing:.03em">
+        Find the Scent.<br>That Stays.
+      </h2>
+      <a class="btn btn--solid" href="/shop"><span>Explore Collection</span><i class="arw">→</i></a>
+    </div>
+  </section>
+
+</main>
+
+<footer data-footer></footer>
+<script src="/js/app.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>
