@@ -4,10 +4,10 @@ const crypto = require('crypto');
 const db = require('../db');
 const { totals } = require('../pricing');
 const { buildCart, ensureCart } = require('./cart');
+const { newId } = require('../id');
 
 const router = express.Router();
 const now = () => new Date().toISOString();
-const newId = (p) => `${p}_${crypto.randomBytes(9).toString('hex')}`;
 
 /* ------------------------------------------------------------------ *
  * SIMULATED PAYMENT — no gateway, no real card data is stored.

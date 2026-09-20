@@ -22,5 +22,3 @@ export function totals(lines, { giftWrap = false } = {}) {
     remaining_for_free_ship_paise: Math.max(0, FREE_SHIP_THRESHOLD - subtotal),
   };
 }
-
-export { GIFT_WRAP_PAISE, SHIPPING_PAISE, FREE_SHIP_THRESHOLD, GST_RATE };

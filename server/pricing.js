@@ -30,4 +30,4 @@ function totals(lines, { giftWrap = false } = {}) {
 const formatINR = (paise) =>
   '₹' + (paise / 100).toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
-module.exports = { totals, formatINR, GIFT_WRAP_PAISE, SHIPPING_PAISE, FREE_SHIP_THRESHOLD, GST_RATE };
+module.exports = { totals, formatINR };

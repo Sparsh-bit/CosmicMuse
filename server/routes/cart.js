@@ -1,12 +1,11 @@
 'use strict';
 const express = require('express');
-const crypto = require('crypto');
 const db = require('../db');
 const { totals } = require('../pricing');
+const { newId } = require('../id');
 
 const router = express.Router();
 
-const newId = (p) => `${p}_${crypto.randomBytes(9).toString('hex')}`;
 const now = () => new Date().toISOString();
 
 const insCart   = db.prepare('INSERT INTO carts (id,created_at,updated_at) VALUES (?,?,?)');
@@ -111,4 +110,4 @@ router.delete('/cart', (req, res) => {
   res.json(buildCart(req.cartId));
 });
 
-module.exports = { router, buildCart, ensureCart, clearAll };
+module.exports = { router, buildCart, ensureCart };

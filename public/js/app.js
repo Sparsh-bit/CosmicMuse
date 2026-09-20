@@ -88,18 +88,27 @@
   function buildNav() {
     const host = $('[data-nav]');
     if (!host) return;
-    const path = location.pathname.replace(/\/$/, '') || '/';
+    // Several nav links share a pathname (/shop, /shop?f=collections,
+    // /shop#journal) and only differ by query/hash, so matching on pathname
+    // alone lit up all of them at once on any /shop page. Prefer an exact
+    // full-URL match (path+query+hash); if none of the links are that
+    // specific — e.g. a search (/shop?q=amber) or an unlisted anchor
+    // (/the-house#sourcing) — fall back to the bare link for that pathname
+    // so the parent tab still lights up instead of nothing at all.
+    const pathname = location.pathname.replace(/\/$/, '') || '/';
+    const here = pathname + location.search + location.hash;
     const links = [
       ['/shop', 'Shop'], ['/shop?f=collections', 'Collections'],
       ['/the-ritual', 'The Ritual'], ['/the-house', 'The House'], ['/shop#journal', 'Journal'],
     ];
+    const current = links.find(([h]) => h === here) || links.find(([h]) => h === pathname);
     host.className = 'nav';
     host.innerHTML = `
       <div class="nav__in">
         <a class="brand" href="/"><b>Cosmic</b>Muse</a>
         <nav class="nav__links" aria-label="Primary">
           ${links.map(([h, t]) =>
-            `<a href="${h}"${h.split('?')[0].split('#')[0] === path ? ' aria-current="page"' : ''}>${t}</a>`).join('')}
+            `<a href="${h}"${current && h === current[0] ? ' aria-current="page"' : ''}>${t}</a>`).join('')}
         </nav>
         <div class="nav__tools">
           <button class="icon-btn" data-search aria-label="Search">${ICON.search}</button>
