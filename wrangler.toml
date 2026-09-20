@@ -2,11 +2,10 @@ name = "cosmicmuse"
 pages_build_output_dir = "public"
 compatibility_date = "2024-09-23"
 
-# Created by `npx wrangler d1 create cosmicmuse` — paste the database_id that
-# command prints back here. `binding = "DB"` is what functions/_lib code reads
-# as `env.DB`; renaming it means updating every function file too.
+# `binding = "DB"` is what functions/_lib code reads as `env.DB`; renaming it
+# means updating every function file too.
 [[d1_databases]]
 binding = "DB"
 database_name = "cosmicmuse"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "eba8f268-367e-445a-8991-cd4650fb8c13"
 migrations_dir = "migrations"
