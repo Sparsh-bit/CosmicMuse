@@ -1,0 +1,9 @@
+# Cloudflare Pages auto-serves clean URLs for filenames that already match
+# the path (/shop -> shop.html, /cart -> cart.html, etc) — adding explicit
+# rules for those fights that built-in behavior and causes a redirect loop.
+# Only these two need a rule, since the filename doesn't match the path.
+# Destination is deliberately extensionless (/house, not /house.html) —
+# pointing at the .html file re-triggers Pages' own clean-URL redirect and
+# turns this into a visible 308 to /house instead of an in-place 200 rewrite.
+/the-house   /house   200
+/the-ritual  /ritual  200

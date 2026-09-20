@@ -9,7 +9,12 @@
     "start": "node server/index.js",
     "dev": "node server/index.js",
     "seed": "node server/seed.js --force",
-    "test": "node server/smoke-test.js"
+    "seed:d1": "node scripts/generate-d1-seed.js > migrations/0002_seed.sql",
+    "test": "node server/smoke-test.js",
+    "cf:dev": "wrangler pages dev public",
+    "cf:migrate:local": "wrangler d1 migrations apply cosmicmuse --local",
+    "cf:migrate:remote": "wrangler d1 migrations apply cosmicmuse --remote",
+    "cf:deploy": "wrangler pages deploy public"
   },
   "engines": {
     "node": ">=18"
@@ -17,5 +22,13 @@
   "dependencies": {
     "better-sqlite3": "^13.0.3",
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "wrangler": "^4.135.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "workerd@1.20260918.1": true,
+    "better-sqlite3@13.0.3": true
   }
 }

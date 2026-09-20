@@ -31,6 +31,56 @@ Then open **http://localhost:4000**. The catalogue seeds itself into SQLite on f
 
 ---
 
+## Deploying to Cloudflare Pages
+
+The Node/Express server above (`server/`) is for local development only. Cloudflare
+Pages doesn't run long-lived Node processes, so the same app also ships as a parallel
+implementation in `functions/` — Cloudflare Pages Functions backed by D1 (Cloudflare's
+SQLite) instead of Express + better-sqlite3. Same routes, same JSON contracts, same
+front end; only the server-side plumbing differs. Keep both in sync if you change a
+route — `server/routes/*.js` is the Express version, `functions/api/**` is the
+Cloudflare version.
+
+One-time setup:
+
+```bash
+npx wrangler login                      # opens a browser to authorize this machine
+npx wrangler d1 create cosmicmuse       # prints a database_id
+```
+
+Paste that `database_id` into `wrangler.toml` (`database_id = "..."`), then:
+
+```bash
+npm run cf:migrate:remote   # creates tables + seeds the catalogue on the real D1 database
+npm run cf:deploy           # builds public/ + functions/ and deploys to Cloudflare Pages
+```
+
+To test the Cloudflare build locally before deploying (uses a local D1 emulation,
+not the real database):
+
+```bash
+npm run cf:migrate:local
+npm run cf:dev              # http://localhost:8788
+```
+
+If you edit the catalogue in `server/seed.js`, regenerate the D1 seed migration from it
+(`server/seed.js`'s `PRODUCTS` array is the single source of truth for both backends):
+
+```bash
+npm run seed:d1              # writes migrations/0002_seed.sql
+npm run cf:migrate:remote    # re-applies it to the live database
+```
+
+**Known gap vs. the Express version:** the stock check in `checkout/pay` and the
+order-write that follows it aren't one atomic transaction in either backend (this
+was already true of the original `better-sqlite3` code) — under concurrent
+checkouts for the last unit of a variant, both could pass the check before either
+writes. Fine for a demo store; add a D1-side conditional update
+(`UPDATE variants SET stock = stock - ? WHERE id = ? AND stock >= ?`, checking
+`meta.changes`) if you need this to be race-proof.
+
+---
+
 ## The scroll animation
 
 The section headed *Everything Begins With A Drop* is a pinned 560vh block. As you scroll
